@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sản phẩm</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-container {
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .product-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 20px;
+            margin-right: 20px; 
+            padding: 20px;
+            width: calc(25% - 20px);
+            float: left; 
+        }
+
+        .product-card:last-child {
+            margin-right: 0; 
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            border-radius: 15px 15px 0 0;
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            margin-bottom: 10px;
+        }
+
+        .btn-add {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .btn-add:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-edit {
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .product-card img {
+            width: 100px; 
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body onload="listProducts()">
+    <div class="container mt-3">
+        <h1>Quản lý Sản phẩm</h1>
+        <div class="row mt-3">
+            <div class="col-lg-4">
+                <h2>THÊM SẢN PHẨM</h2>
+                <div class="form-container">
+                    <div class="form-group">
+                        <input type="text" class="form-control mb-2" id="idInput" placeholder="ID">
+                        <input type="text" class="form-control mb-2" id="nameInput" placeholder="Tên">
+                        <input type="text" class="form-control mb-2" id="codeInput" placeholder="Mã">
+                        <input type="text" class="form-control mb-2" id="priceInput" placeholder="Giá">
+                        <input type="text" class="form-control mb-2" id="imageInput" placeholder="URL Hình Ảnh">
+                    </div>
+                    <button class="btn btn-add btn-block" onclick="addProduct()">Thêm</button>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div id="productList" class="card-columns"></div>
+            </div>
+        </div>
+    </div>
+    <script src="thoitrangnam.js"></script>
+</body>
+</html>
